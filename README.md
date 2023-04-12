@@ -1,7 +1,7 @@
 # Bem vindo à DEVinHouse <img width="180px" alt="Philips" src="ExerciciosM02S11/images/logo-phil.png"/>
-## Módulo 02 - Semana 10
+## Módulo 02 - Semana 11
 
-Repositório criado para a elaboração dos 11 exercícios referentes a essa semana. <br>
+Repositório criado para a elaboração dos 9 exercícios referentes a essa semana. <br>
 
 Para visualizar os exercícios, <a href="https://github.com/GeorgeEnriqueBravo/DEVinHouse-Modulo02-Semana11/archive/refs/heads/main.zip" target="_blank">
     clique aqui
@@ -16,71 +16,71 @@ Após o download, abra a pasta "ExerciciosM02S11" utilizando o software `Intelli
 ---
 
 # Lista de exercícios <img width="75px" alt="Philips" src="ExerciciosM02S11/images/lista.png"/>
-### [M2S10] Ex 1 - Criação do endpoint Exibe Produto
+### [M2S11] Ex 1 - Criação de Entidades
 
-Criar um endpoint para exibir um Produto.
+Criar as Entidades:
 
-Esse endpoint deve levar uma página criada pelo Spring com informações pré criadas no HTML.
+- Quiz - id, nome, descricao
+- Perguntas - id, titulo, texto, id_quiz
+- Resposta - id, texto, id_pergunta
 
-Na página deve conter:
+### [M2S11] Ex 2 - Criar os Repositórios para as Entidades
 
-- O nome do produto,
-- Uma descrição dele,
-- A data de lançamento e
-- Um valor para o mesmo.
+Criar os Repositórios para as Entidades.
 
-### [M2S10] Ex 2 - Criação do Model do Produto
+### [M2S11] Ex 3 - Endpoints GET
 
-- Criar um Model do Produto. Utilizando a biblioteca do "Spring Data".
-- Criar um Model do Produdo adicionando um ID como chave primária.
-- Conectar esse programa ao banco de dados criando um repository CRUD, e por fim criar um objeto local de Produto e exibir as suas informações na página criada anteriormente.
+Crie endpoints de método GET que realizem as listagens:
 
-O Banco de dados pode ser um H2
+- Todas as Perguntas
+- Todos os Quizzes
+- Todas as Respostas
 
-### [M2S10] Ex 3 - Criação dos endpoint Exibe Todos os Produtos e Criar novos produtos
+Devemos ter também endpoits GET para retornar: (utilize path parameters)
 
-- Criar um Service para para realizar a comunicação do "endpoint" do Produto com o Repositório do banco de dados.
-- Implementar um método para encontrar todos os produtos armazenados e um método para criar novos produtos.
-- Criar um formulário para a inclusão de novos produtos por meio de um método POST.
+- A Pergunta por ID
+- O Quizzes por ID
+- A Respostas por ID
 
-### [M2S10] Ex 4 - Criação dos endpoint Deletar Produtos por ID e Atualiza produtos por ID
+### [M2S11] Ex 4 - Novas funcionalidades
 
-- Criar um método dentro do Service para realizar a atualização de um Produto, e um método para realizar a deleção de um produto.
-- Ambos os processo devem ser feitos por meio do ID do produto.
+Crie endpoints para realizar as seguintes listagens (utilizar query parameters):
 
-Devemos ter controller e telas para acessar esses services.
+- Listar Perguntas por Quiz
+- Listar Respostas por Pergunta
 
-### [M2S10] Ex 5 - Adcionando segurança
+### [M2S11] Ex 5 - Endpoints POST
 
-- Adicionar o componente Spring de Segurança e realizar a configuração de forma que não seja possível acessar o programa sem a autenticação.
-- Adicionar a lógica de autenticação de forma que apenas os usuários que possuírem as informações: usuário e senha, determinado pelo sistema, possam visualizar os pedidos.
+Crie os endpoints do método POST que realizem as tarefas:
 
-### [M2S10] Ex 6 - Criando páginas de login e de logout
+- Criar nova Pergunta
+- Criar nova Resposta
+- Criar novo Quiz
 
-- Criar uma página de login e uma de logout para o sistema.
-- Configurar de forma que, atuem juntamente com a configuração de segurança para permitir, ao usuário determinado, entrar no sistema.
+### [M2S11] Ex 6 - Endpoints PUT
 
-### [M2S10] Ex 7 - Criando a classe Usuário
+Crie os endpoints do método PUT que realizem as tarefas:
 
-- Criar Model para Usuário que deverá ser usado para o armazenar e verificar os logins no sistemas.
-- O usuário deve estar associado ao Produto ao qual tem o acesso, sendo assim, cada usuário que logar poderá apenas ver os próprios produtos.
+- Atualizar uma Pergunta
+- Atualizar uma Resposta
+- Atualizar um Quiz
 
-### [M2S10] Ex 8 - Defina JWT
+### [M2S11] Ex 7 - Endpoints DELETE
 
-- Definir o que é JWT, suas utilizações e o seu modo de funcionamento.
-- Criar um passo a passo de uma requisição que utiliza o JWT.
-- Gerar um JWT de exemplo que possa ser lido e utilizado por um programa.
+Crie os endpoints do método DELETE que realizem as tarefas: (utilize path variables)
 
-### [M2S10] Ex 9 - Criação de uma api com autenticação por JWT
+- Deletar uma Pergunta por ID
+- Deletar uma Resposta por ID
+- Deletar um Quiz por ID
 
-- Criar uma API que permite o acesso a um endpoint /hello, que retorna uma string "hello world" ao ser acessado por um usuários, autenticados e autorizados, através de uma requisição que carrega um token JWT válida.
-- Essa requisição deve ser negada para um usuário sem autenticação/autorização.
+### [M2S11] Ex 8 - Crie uma classe para tratar exceções
 
-### [M2S10] Ex 10 - Adicionando funcionalidade a API com JWT
+Essa classe deve ter tratamento para erros HTTP do tipo 500, 400 e 404,
+cada um desses deve ter uma mensagem que fale o status do erro e a causa do erro.
 
-- Adicionar à API, criada no exercício anterior, o mesmo model Produto criado anteriormente.
-- Criar uma lógica CRUD para: criar, ler, atualizar e deletar, Produtos utilizando requisições autenticadas por JWT.
-- Essa requisição deve ser negada para um usuário sem autenticação/autorização.
+### [M2S11] Ex 9 - Organize o código em Controller-Service-Repository
+
+Agora que você já conseguiu criar a API, está na hora de organizar, separando a lógica em classes Service.
 
 ---
 
